@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Payroll" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PC410903;Initial Catalog=Payroll;Integrated Security=True" SettingsObjectName="Payroll.Properties.Settings" SettingsPropertyName="PayrollConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Employee" Member="Employee">
+    <Type Name="Employee">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tabelNumber" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="fio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="birthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="passportData" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="salary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_TablePayroll" Member="TablePayroll" ThisKey="id" OtherKey="employee" Type="TablePayroll" />
+      <Association Name="Salary_Employee" Member="Salary1" ThisKey="salary" OtherKey="id" Type="Salary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payroll" Member="Payroll">
+    <Type Name="Payroll">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="number" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Payroll_TablePayroll" Member="TablePayroll" ThisKey="id" OtherKey="payroll" Type="TablePayroll" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Position" Member="Position">
+    <Type Name="Position">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Position_Salary" Member="Salary" ThisKey="id" OtherKey="position" Type="Salary" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Salary" Member="Salary">
+    <Type Name="Salary">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dateStart" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Salary_Employee" Member="Employee" ThisKey="id" OtherKey="salary" Type="Employee" />
+      <Association Name="Position_Salary" Member="Position1" ThisKey="position" OtherKey="id" Type="Position" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TablePayroll" Member="TablePayroll">
+    <Type Name="TablePayroll">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="employee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ndfl" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="payroll" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_TablePayroll" Member="Employee1" ThisKey="employee" OtherKey="id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Payroll_TablePayroll" Member="Payroll1" ThisKey="payroll" OtherKey="id" Type="Payroll" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

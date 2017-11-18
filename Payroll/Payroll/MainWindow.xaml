@@ -1,0 +1,19 @@
+﻿<Window x:Class="MakePayroll.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MakePayroll"
+        mc:Ignorable="d"
+        Title="Начисление заработной платы" Height="353" Width="635">
+    <StackPanel>
+        <Button Margin="2" Content="Начисление з/п" Click="payroll_Click"/>
+        <DataGrid Height="271">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер"/>
+                <DataGridTextColumn Header="Месяц"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Margin="2" Content="Вывести отчет" Click="report_Click"/>
+    </StackPanel>
+</Window>
