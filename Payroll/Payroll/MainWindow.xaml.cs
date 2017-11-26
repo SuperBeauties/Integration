@@ -18,18 +18,28 @@ namespace MakePayroll {
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        MainWindowViewModel view;
         public MainWindow() {
             InitializeComponent();
-        }
-
-        private void payroll_Click(object sender, RoutedEventArgs e) {
-            PayrollWindow payroll = new PayrollWindow();
-            payroll.ShowDialog();
+            view = new MainWindowViewModel();
+            DataContext = view;
         }
 
         private void report_Click(object sender, RoutedEventArgs e) {
             ReportWindow report = new ReportWindow();
             report.ShowDialog();
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e) {
+            view.add();
+        }
+
+        private void remove_Click(object sender, RoutedEventArgs e) {
+            view.remove();
+        }
+
+        private void edit_Click(object sender, RoutedEventArgs e) {
+            view.edit();
         }
     }
 }

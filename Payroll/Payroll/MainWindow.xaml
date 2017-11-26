@@ -5,13 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MakePayroll"
         mc:Ignorable="d"
-        Title="Начисление заработной платы" Height="353" Width="635">
+        Title="Начисление заработной платы" Height="360" Width="635">
     <StackPanel>
-        <Button Margin="2" Content="Начисление з/п" Click="payroll_Click"/>
-        <DataGrid Height="271">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31"/>
+                <ColumnDefinition Width="31"/>
+                <ColumnDefinition Width="31"/>
+                <ColumnDefinition Width="500*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="+" FontWeight="Bold" Margin="2" Click="add_Click"/>
+            <Button Grid.Column="1" Content="-" FontWeight="Bold" Margin="2" Click="remove_Click"/>
+            <Button Grid.Column="2" Content="/" FontWeight="Bold" Margin="2" Click="edit_Click"/>
+        </Grid>
+        <DataGrid Height="271" 
+                  ItemsSource="{Binding payrollView}"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  AutoGenerateColumns="False"
+                  SelectedItem="{Binding rowPayroll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер"/>
-                <DataGridTextColumn Header="Месяц"/>
+                <DataGridTextColumn Header="Номер" Binding="{Binding number}"/>
+                <DataGridTextColumn Header="Месяц" Binding="{Binding month}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Margin="2" Content="Вывести отчет" Click="report_Click"/>

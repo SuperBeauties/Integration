@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MakePayroll"
         mc:Ignorable="d"
-        Title="Начисление заработной платы" Height="400" Width="550" MinHeight="300" MinWidth="500">
+        Title="Начисление заработной платы" Height="400" Width="550" MinHeight="300" MinWidth="500" Closing="Window_Closing">
     <Grid>
         <StackPanel>
             <Label Content="Номер документа"/>
-            <TextBox Margin="2" Text="{Binding Path=payroll.number, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <TextBox Margin="2" Text="{Binding Path=payroll.number, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True"/>
             <Label Content="Месяц начисления"/>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -17,8 +17,8 @@
                     <ColumnDefinition Width="29*"/>
                     <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox Margin="2" IsReadOnly="True" Text="{Binding Path=month, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                <DatePicker Grid.Column="1" Margin="2" Text="{Binding Path=payrollDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <TextBox x:Name="month" IsReadOnly="True" Text="{Binding Path=payroll.month, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DatePicker Grid.Column="1" Margin="2" SelectedDate="{Binding Path=payroll.date, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -26,26 +26,33 @@
                     <ColumnDefinition Width="29*"/>
                     <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="2" Content="Выполнить"/>
+                <Button Margin="2" Content="Выполнить" Click="Button_Click"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="61*"/>
+                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="44*"/>
+                    <ColumnDefinition Width="112*"/>
+                    <ColumnDefinition Width="339*"/>
                 </Grid.ColumnDefinitions>
                 <Button Margin="2" Content="+" FontWeight="Bold" Click="add_Click"/>
                 <Button Grid.Column="1" Margin="2" Content="-" FontWeight="Bold" Click="remove_Click"/>
+                <Button Content="Заполнить" Grid.Column="2"  Margin="2" Visibility="Hidden"/>
             </Grid>
-            <DataGrid Margin="2" AutoGenerateColumns="False"
+            <DataGrid Margin="2" 
+                      AutoGenerateColumns="False"
                       ItemsSource="{Binding tableView}"
                       CanUserAddRows="False"
                       CanUserDeleteRows="False"
-                      SelectedItem="{Binding rowTablePayroll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                      IsReadOnly="True"
+                      SelectedItem="{Binding rowTablePayroll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Сотрудник" Binding="{Binding employee}"/>
-                    <DataGridTextColumn Header="Сумма" Binding="{Binding sum}"/>
+                    <DataGridTextColumn Header="Табельный номер" Binding="{Binding tabelNumber}"/>
+                    <DataGridTextColumn Header="ФИО" Binding="{Binding fio}"/>
+                    <DataGridTextColumn Header="Должность" Binding="{Binding name}"/>
+                    <DataGridTextColumn Header="Оклад" Binding="{Binding sum}"/>
                     <DataGridTextColumn Header="НДФЛ" Binding="{Binding ndfl}"/>
+                    <DataGridTextColumn Header="Начисленно" Binding="{Binding fact}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

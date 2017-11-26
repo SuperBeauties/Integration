@@ -18,9 +18,9 @@ namespace MakePayroll {
     /// </summary>
     public partial class PayrollWindow : Window {
         PayrollWindowViewModel view;
-        public PayrollWindow() {
+        public PayrollWindow(PayrollView payroll) {
             InitializeComponent();
-            view = new PayrollWindowViewModel();
+            view = new PayrollWindowViewModel(payroll);
             DataContext = view;
         }
 
@@ -30,6 +30,38 @@ namespace MakePayroll {
 
         private void remove_Click(object sender, RoutedEventArgs e) {
             view.remove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            if (!view.saveTable()) {
+                MessageBox.Show("В строках заполнены не все поля");
+                return;
+            }
+            DialogResult = true;
+            Close();
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e) {
+            month.Text = view.month();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) {
+            MessageBoxResult res = MessageBox.Show("Сохранить документ перед закрытием?", "Сохранить", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            if (res == MessageBoxResult.Yes) {
+                if (!view.saveTable()) {
+                    MessageBox.Show("В строках заполнены не все поля");
+                    e.Cancel = true;
+                }
+                DialogResult = true;
+            } else if (res == MessageBoxResult.No) {
+                view.unSave();
+            } else {
+                e.Cancel = true;
+            }
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
+            view.selectEmployee();
         }
     }
 }

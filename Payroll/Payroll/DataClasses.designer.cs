@@ -9,7 +9,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MakePayroll {
+namespace MakePayroll
+{
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
 	using System.Data;
@@ -47,7 +48,7 @@ namespace MakePayroll {
     #endregion
 		
 		public DataClassesDataContext() : 
-				base(global::Payroll.Properties.Settings.Default.PayrollConnectionString, mappingSource)
+				base(global::MakePayroll.Properties.Settings.Default.PayrollConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -113,6 +114,30 @@ namespace MakePayroll {
 			get
 			{
 				return this.GetTable<TablePayroll>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PayrollView> PayrollView
+		{
+			get
+			{
+				return this.GetTable<PayrollView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TablePayrollView> TablePayrollView
+		{
+			get
+			{
+				return this.GetTable<TablePayrollView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<EmployeeView> EmployeeView
+		{
+			get
+			{
+				return this.GetTable<EmployeeView>();
 			}
 		}
 	}
@@ -1107,6 +1132,429 @@ namespace MakePayroll {
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PayrollView")]
+	public partial class PayrollView
+	{
+		
+		private int _id;
+		
+		private string _number;
+		
+		private string _month;
+		
+		private System.Nullable<System.DateTime> _date;
+		
+		public PayrollView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_number", DbType="VarChar(8)")]
+		public string number
+		{
+			get
+			{
+				return this._number;
+			}
+			set
+			{
+				if ((this._number != value))
+				{
+					this._number = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_month", DbType="VarChar(MAX)")]
+		public string month
+		{
+			get
+			{
+				return this._month;
+			}
+			set
+			{
+				if ((this._month != value))
+				{
+					this._month = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
+		public System.Nullable<System.DateTime> date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this._date = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TablePayrollView")]
+	public partial class TablePayrollView
+	{
+		
+		private string _tabelNumber;
+		
+		private string _fio;
+		
+		private System.Nullable<double> _sum;
+		
+		private string _name;
+		
+		private System.Nullable<double> _fact;
+		
+		private int _id;
+		
+		private int _payroll;
+		
+		private System.Nullable<int> _employee;
+		
+		private System.Nullable<double> _ndfl;
+		
+		public TablePayrollView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tabelNumber", DbType="VarChar(8)")]
+		public string tabelNumber
+		{
+			get
+			{
+				return this._tabelNumber;
+			}
+			set
+			{
+				if ((this._tabelNumber != value))
+				{
+					this._tabelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fio", DbType="VarChar(250)")]
+		public string fio
+		{
+			get
+			{
+				return this._fio;
+			}
+			set
+			{
+				if ((this._fio != value))
+				{
+					this._fio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sum", DbType="Float")]
+		public System.Nullable<double> sum
+		{
+			get
+			{
+				return this._sum;
+			}
+			set
+			{
+				if ((this._sum != value))
+				{
+					this._sum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(10)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fact", DbType="Float")]
+		public System.Nullable<double> fact
+		{
+			get
+			{
+				return this._fact;
+			}
+			set
+			{
+				if ((this._fact != value))
+				{
+					this._fact = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payroll", DbType="Int NOT NULL")]
+		public int payroll
+		{
+			get
+			{
+				return this._payroll;
+			}
+			set
+			{
+				if ((this._payroll != value))
+				{
+					this._payroll = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee", DbType="Int")]
+		public System.Nullable<int> employee
+		{
+			get
+			{
+				return this._employee;
+			}
+			set
+			{
+				if ((this._employee != value))
+				{
+					this._employee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ndfl", DbType="Float")]
+		public System.Nullable<double> ndfl
+		{
+			get
+			{
+				return this._ndfl;
+			}
+			set
+			{
+				if ((this._ndfl != value))
+				{
+					this._ndfl = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmployeeView")]
+	public partial class EmployeeView
+	{
+		
+		private int _id;
+		
+		private string _tabelNumber;
+		
+		private string _fio;
+		
+		private System.Nullable<int> _salary;
+		
+		private System.Nullable<int> _position;
+		
+		private System.Nullable<double> _sum;
+		
+		private System.Nullable<System.DateTime> _dateStart;
+		
+		private System.Nullable<System.DateTime> _dateEnd;
+		
+		private string _name;
+		
+		public EmployeeView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tabelNumber", DbType="VarChar(8)")]
+		public string tabelNumber
+		{
+			get
+			{
+				return this._tabelNumber;
+			}
+			set
+			{
+				if ((this._tabelNumber != value))
+				{
+					this._tabelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fio", DbType="VarChar(250)")]
+		public string fio
+		{
+			get
+			{
+				return this._fio;
+			}
+			set
+			{
+				if ((this._fio != value))
+				{
+					this._fio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_salary", DbType="Int")]
+		public System.Nullable<int> salary
+		{
+			get
+			{
+				return this._salary;
+			}
+			set
+			{
+				if ((this._salary != value))
+				{
+					this._salary = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_position", DbType="Int")]
+		public System.Nullable<int> position
+		{
+			get
+			{
+				return this._position;
+			}
+			set
+			{
+				if ((this._position != value))
+				{
+					this._position = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sum", DbType="Float")]
+		public System.Nullable<double> sum
+		{
+			get
+			{
+				return this._sum;
+			}
+			set
+			{
+				if ((this._sum != value))
+				{
+					this._sum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateStart", DbType="Date")]
+		public System.Nullable<System.DateTime> dateStart
+		{
+			get
+			{
+				return this._dateStart;
+			}
+			set
+			{
+				if ((this._dateStart != value))
+				{
+					this._dateStart = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateEnd", DbType="Date")]
+		public System.Nullable<System.DateTime> dateEnd
+		{
+			get
+			{
+				return this._dateEnd;
+			}
+			set
+			{
+				if ((this._dateEnd != value))
+				{
+					this._dateEnd = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(10)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
 			}
 		}
 	}
