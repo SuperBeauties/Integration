@@ -32,3 +32,37 @@
 \\s41-fs01.regions.alfaintra.net\Users$\u_415FW\Мои документы\Visual Studio 2015\Projects\Payroll\Payroll\obj\Debug\EmploeesWindow.g.cs
 \\s41-fs01.regions.alfaintra.net\Users$\u_415FW\Мои документы\Visual Studio 2015\Projects\Payroll\Payroll\obj\Debug\EmploeesWindow.baml
 \\s41-fs01.regions.alfaintra.net\Users$\u_415FW\Мои документы\Visual Studio 2015\Projects\Payroll\Payroll\obj\Debug\MakePayroll.Properties.Resources.resources
+E:\Integration\Payroll\Payroll\bin\Debug\SqlServerTypes\x64\msvcr100.dll
+E:\Integration\Payroll\Payroll\bin\Debug\SqlServerTypes\x64\SqlServerSpatial110.dll
+E:\Integration\Payroll\Payroll\bin\Debug\SqlServerTypes\x86\msvcr100.dll
+E:\Integration\Payroll\Payroll\bin\Debug\SqlServerTypes\x86\SqlServerSpatial110.dll
+E:\Integration\Payroll\Payroll\bin\Debug\Payroll.exe.config
+E:\Integration\Payroll\Payroll\bin\Debug\Payroll.exe
+E:\Integration\Payroll\Payroll\bin\Debug\Payroll.pdb
+E:\Integration\Payroll\Payroll\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\Integration\Payroll\Payroll\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+E:\Integration\Payroll\Payroll\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\Integration\Payroll\Payroll\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+E:\Integration\Payroll\Payroll\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\Integration\Payroll\Payroll\bin\Debug\PropertyChanged.xml
+E:\Integration\Payroll\Payroll\obj\Debug\MakePayroll.csprojResolveAssemblyReference.cache
+E:\Integration\Payroll\Payroll\obj\Debug\EmploeesWindow.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\MainWindow.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\PayrollWindow.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\PayrollLists.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\ReportWindow.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\App.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\Payroll_Content.g.cs
+E:\Integration\Payroll\Payroll\obj\Debug\Payroll_MarkupCompile.cache
+E:\Integration\Payroll\Payroll\obj\Debug\Payroll_MarkupCompile.lref
+E:\Integration\Payroll\Payroll\obj\Debug\EmploeesWindow.baml
+E:\Integration\Payroll\Payroll\obj\Debug\MainWindow.baml
+E:\Integration\Payroll\Payroll\obj\Debug\PayrollWindow.baml
+E:\Integration\Payroll\Payroll\obj\Debug\PayrollLists.baml
+E:\Integration\Payroll\Payroll\obj\Debug\ReportWindow.baml
+E:\Integration\Payroll\Payroll\obj\Debug\Payroll.g.resources
+E:\Integration\Payroll\Payroll\obj\Debug\MakePayroll.Properties.Resources.resources
+E:\Integration\Payroll\Payroll\obj\Debug\MakePayroll.csproj.GenerateResource.Cache
+E:\Integration\Payroll\Payroll\obj\Debug\MakePayroll.csproj.CoreCompileInputs.cache
+E:\Integration\Payroll\Payroll\obj\Debug\Payroll.exe
+E:\Integration\Payroll\Payroll\obj\Debug\Payroll.pdb

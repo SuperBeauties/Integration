@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-\\s41-fs01.regions.alfaintra.net\Users$\u_415FW\Мои документы\Visual Studio 2015\Projects\Payroll\Payroll\obj\Debug\
+E:\Integration\Payroll\Payroll\obj\Debug\
 MakePayroll
 none
 false
 DEBUG;TRACE
-\\s41-fs01.regions.alfaintra.net\Users$\u_415FW\Мои документы\Visual Studio 2015\Projects\Payroll\Payroll\App.xaml
+E:\Integration\Payroll\Payroll\App.xaml
 51945503311
 5-1759045966
 17-1887750277
-741573456153
+741213049537
 EmploeesWindow.xaml;MainWindow.xaml;PayrollWindow.xaml;PayrollLists.xaml;ReportWindow.xaml;
 
 False
