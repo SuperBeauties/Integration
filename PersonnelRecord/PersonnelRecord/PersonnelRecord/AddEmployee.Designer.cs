@@ -97,6 +97,7 @@
             this.tabelNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "tabelNumber", true));
             this.tabelNumber.Location = new System.Drawing.Point(148, 6);
             this.tabelNumber.Name = "tabelNumber";
+            this.tabelNumber.ReadOnly = true;
             this.tabelNumber.Size = new System.Drawing.Size(92, 20);
             this.tabelNumber.TabIndex = 9;
             // 

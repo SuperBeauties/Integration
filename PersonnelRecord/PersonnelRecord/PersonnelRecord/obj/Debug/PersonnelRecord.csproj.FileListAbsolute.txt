@@ -43,3 +43,4 @@ C:\Users\rocke\Downloads\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Deb
 C:\Users\rocke\Downloads\PersonnelRecord\PersonnelRecord\PersonnelRecord\bin\Debug\PersonnelRecord.exe.config
 C:\Users\rocke\Downloads\PersonnelRecord\PersonnelRecord\PersonnelRecord\bin\Debug\PersonnelRecord.exe
 C:\Users\rocke\Downloads\PersonnelRecord\PersonnelRecord\PersonnelRecord\bin\Debug\PersonnelRecord.pdb
+C:\Users\rocke\Downloads\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.ChangePosition.resources

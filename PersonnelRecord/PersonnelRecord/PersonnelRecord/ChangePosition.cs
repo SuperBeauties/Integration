@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,28 +10,32 @@ using System.Windows.Forms;
 
 namespace PersonnelRecord
 {
-    public partial class Position : Form
+    public partial class ChangePosition : Form
     {
-
-        public Position()
+        public ChangePosition()
         {
             InitializeComponent();
         }
 
         private void save_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox.Text))
+            if (comboBox1.SelectedItem == null || comboBox2.SelectedItem == null)
             {
-                label2.Text = "Введите название должности!";
+                label5.Text = "Не выбраны должность и/или сотрудник";
                 return;
             }
-            positionBindingSource.EndEdit();
+            double temp = 0;
+            if (string.IsNullOrEmpty(sum.Text) || !double.TryParse(sum.Text, out temp))
+            {
+                label5.Text = "Сумма оклада не указана или имеет неверный формат";
+                return;
+            }
+
             DialogResult = DialogResult.OK;
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            positionBindingSource.CancelEdit();
             DialogResult = DialogResult.Abort;
         }
     }

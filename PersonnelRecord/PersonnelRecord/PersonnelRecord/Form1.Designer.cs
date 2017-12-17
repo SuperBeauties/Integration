@@ -40,14 +40,21 @@
             this.salaryTableAdapter = new PersonnelRecord._D__MYDB_MDFDataSetTableAdapters.SalaryTableAdapter();
             this.positionTableAdapter = new PersonnelRecord._D__MYDB_MDFDataSetTableAdapters.PositionTableAdapter();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.editPos = new System.Windows.Forms.Button();
+            this.deletePos = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPos = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.editChange = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.addChange = new System.Windows.Forms.Button();
+            this.dataGridViewChange = new System.Windows.Forms.DataGridView();
+            this.employeeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.changePositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.deleteEnd = new System.Windows.Forms.Button();
@@ -69,6 +76,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
+            this.delete = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.endWorkTableAdapter = new PersonnelRecord._D__MYDB_MDFDataSetTableAdapters.EndWorkTableAdapter();
+            this.changePositionTableAdapter = new PersonnelRecord._D__MYDB_MDFDataSetTableAdapters.ChangePositionTableAdapter();
             this.tabelNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,9 +87,6 @@
             this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
-            this.endWorkTableAdapter = new PersonnelRecord._D__MYDB_MDFDataSetTableAdapters.EndWorkTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMYDBMDFDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._D__MYDB_MDFDataSet)).BeginInit();
@@ -86,9 +94,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.salaryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startWorkBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPos)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changePositionBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endWorkBindingSource)).BeginInit();
@@ -147,10 +156,10 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button12);
-            this.tabPage5.Controls.Add(this.button9);
+            this.tabPage5.Controls.Add(this.editPos);
+            this.tabPage5.Controls.Add(this.deletePos);
             this.tabPage5.Controls.Add(this.button7);
-            this.tabPage5.Controls.Add(this.dataGridView5);
+            this.tabPage5.Controls.Add(this.dataGridViewPos);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -159,25 +168,27 @@
             this.tabPage5.Text = "Должности";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // editPos
             // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(102, 6);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(36, 23);
-            this.button12.TabIndex = 7;
-            this.button12.Text = "/";
-            this.button12.UseVisualStyleBackColor = true;
+            this.editPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editPos.Location = new System.Drawing.Point(102, 6);
+            this.editPos.Name = "editPos";
+            this.editPos.Size = new System.Drawing.Size(36, 23);
+            this.editPos.TabIndex = 7;
+            this.editPos.Text = "/";
+            this.editPos.UseVisualStyleBackColor = true;
+            this.editPos.Click += new System.EventHandler(this.editPos_Click);
             // 
-            // button9
+            // deletePos
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(56, 6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(40, 23);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "-";
-            this.button9.UseVisualStyleBackColor = true;
+            this.deletePos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deletePos.Location = new System.Drawing.Point(56, 6);
+            this.deletePos.Name = "deletePos";
+            this.deletePos.Size = new System.Drawing.Size(40, 23);
+            this.deletePos.TabIndex = 5;
+            this.deletePos.Text = "-";
+            this.deletePos.UseVisualStyleBackColor = true;
+            this.deletePos.Click += new System.EventHandler(this.deletePos_Click);
             // 
             // button7
             // 
@@ -188,23 +199,40 @@
             this.button7.TabIndex = 4;
             this.button7.Text = "+";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.addPos_Click);
             // 
-            // dataGridView5
+            // dataGridViewPos
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(8, 41);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.Size = new System.Drawing.Size(257, 296);
-            this.dataGridView5.TabIndex = 0;
+            this.dataGridViewPos.AllowUserToAddRows = false;
+            this.dataGridViewPos.AllowUserToDeleteRows = false;
+            this.dataGridViewPos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewPos.AutoGenerateColumns = false;
+            this.dataGridViewPos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn1});
+            this.dataGridViewPos.DataSource = this.positionBindingSource;
+            this.dataGridViewPos.Location = new System.Drawing.Point(8, 41);
+            this.dataGridViewPos.Name = "dataGridViewPos";
+            this.dataGridViewPos.ReadOnly = true;
+            this.dataGridViewPos.Size = new System.Drawing.Size(643, 296);
+            this.dataGridViewPos.TabIndex = 0;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button4);
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.editChange);
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.addChange);
+            this.tabPage4.Controls.Add(this.dataGridViewChange);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -213,33 +241,105 @@
             this.tabPage4.Text = "Кадровый перевод";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // editChange
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(56, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "-";
-            this.button4.UseVisualStyleBackColor = true;
+            this.editChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editChange.Location = new System.Drawing.Point(100, 6);
+            this.editChange.Name = "editChange";
+            this.editChange.Size = new System.Drawing.Size(36, 23);
+            this.editChange.TabIndex = 13;
+            this.editChange.Text = "/";
+            this.editChange.UseVisualStyleBackColor = true;
+            this.editChange.Click += new System.EventHandler(this.editChange_Click);
             // 
-            // button3
+            // button6
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(8, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(54, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(40, 23);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "-";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.deleteChange_Click);
             // 
-            // dataGridView3
+            // addChange
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 41);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(576, 298);
-            this.dataGridView3.TabIndex = 1;
+            this.addChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addChange.Location = new System.Drawing.Point(6, 6);
+            this.addChange.Name = "addChange";
+            this.addChange.Size = new System.Drawing.Size(42, 23);
+            this.addChange.TabIndex = 11;
+            this.addChange.Text = "+";
+            this.addChange.UseVisualStyleBackColor = true;
+            this.addChange.Click += new System.EventHandler(this.addChange_Click);
+            // 
+            // dataGridViewChange
+            // 
+            this.dataGridViewChange.AllowUserToAddRows = false;
+            this.dataGridViewChange.AllowUserToDeleteRows = false;
+            this.dataGridViewChange.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewChange.AutoGenerateColumns = false;
+            this.dataGridViewChange.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewChange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewChange.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employeeDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn4,
+            this.sPosDataGridViewTextBoxColumn,
+            this.sumDataGridViewTextBoxColumn1});
+            this.dataGridViewChange.DataSource = this.changePositionBindingSource;
+            this.dataGridViewChange.Location = new System.Drawing.Point(6, 41);
+            this.dataGridViewChange.Name = "dataGridViewChange";
+            this.dataGridViewChange.ReadOnly = true;
+            this.dataGridViewChange.Size = new System.Drawing.Size(636, 298);
+            this.dataGridViewChange.TabIndex = 1;
+            // 
+            // employeeDataGridViewTextBoxColumn1
+            // 
+            this.employeeDataGridViewTextBoxColumn1.DataPropertyName = "employee";
+            this.employeeDataGridViewTextBoxColumn1.DataSource = this.employeeBindingSource;
+            this.employeeDataGridViewTextBoxColumn1.DisplayMember = "fio";
+            this.employeeDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.employeeDataGridViewTextBoxColumn1.HeaderText = "Сотрудник";
+            this.employeeDataGridViewTextBoxColumn1.Name = "employeeDataGridViewTextBoxColumn1";
+            this.employeeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.employeeDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeeDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.employeeDataGridViewTextBoxColumn1.ValueMember = "id";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "startdate";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата кадрового перевода";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // sPosDataGridViewTextBoxColumn
+            // 
+            this.sPosDataGridViewTextBoxColumn.DataPropertyName = "sPos";
+            this.sPosDataGridViewTextBoxColumn.DataSource = this.positionBindingSource;
+            this.sPosDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.sPosDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.sPosDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.sPosDataGridViewTextBoxColumn.Name = "sPosDataGridViewTextBoxColumn";
+            this.sPosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sPosDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sPosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.sPosDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // sumDataGridViewTextBoxColumn1
+            // 
+            this.sumDataGridViewTextBoxColumn1.DataPropertyName = "sum";
+            this.sumDataGridViewTextBoxColumn1.HeaderText = "Оклад";
+            this.sumDataGridViewTextBoxColumn1.Name = "sumDataGridViewTextBoxColumn1";
+            this.sumDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // changePositionBindingSource
+            // 
+            this.changePositionBindingSource.DataMember = "ChangePosition";
+            this.changePositionBindingSource.DataSource = this._D__MYDB_MDFDataSet;
             // 
             // tabPage3
             // 
@@ -462,6 +562,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(667, 371);
             this.tabControl1.TabIndex = 6;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
             // 
             // tabPage1
             // 
@@ -513,6 +614,36 @@
             this.dataGridViewEmployees.Size = new System.Drawing.Size(645, 305);
             this.dataGridViewEmployees.TabIndex = 3;
             // 
+            // delete
+            // 
+            this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delete.Location = new System.Drawing.Point(49, 3);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(36, 23);
+            this.delete.TabIndex = 5;
+            this.delete.Text = "-";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // add
+            // 
+            this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add.Location = new System.Drawing.Point(6, 3);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(37, 23);
+            this.add.TabIndex = 4;
+            this.add.Text = "+";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // endWorkTableAdapter
+            // 
+            this.endWorkTableAdapter.ClearBeforeFill = true;
+            // 
+            // changePositionTableAdapter
+            // 
+            this.changePositionTableAdapter.ClearBeforeFill = true;
+            // 
             // tabelNumberDataGridViewTextBoxColumn
             // 
             this.tabelNumberDataGridViewTextBoxColumn.DataPropertyName = "tabelNumber";
@@ -558,35 +689,9 @@
             // dateEndDataGridViewTextBoxColumn
             // 
             this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "dateEnd";
-            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Дата окончания работы на позиции";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Дата окончания работы";
             this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
             this.dateEndDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // delete
-            // 
-            this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delete.Location = new System.Drawing.Point(49, 3);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(36, 23);
-            this.delete.TabIndex = 5;
-            this.delete.Text = "-";
-            this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
-            // add
-            // 
-            this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add.Location = new System.Drawing.Point(6, 3);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(37, 23);
-            this.add.TabIndex = 4;
-            this.add.Text = "+";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // endWorkTableAdapter
-            // 
-            this.endWorkTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -604,9 +709,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.salaryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startWorkBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPos)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changePositionBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.endWorkBindingSource)).EndInit();
@@ -637,14 +743,12 @@
         private System.Windows.Forms.BindingSource positionBindingSource;
         private _D__MYDB_MDFDataSetTableAdapters.PositionTableAdapter positionTableAdapter;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button editPos;
+        private System.Windows.Forms.Button deletePos;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView dataGridViewPos;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewChange;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button deleteEnd;
@@ -663,6 +767,22 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DataGridView dataGridViewEmployees;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.BindingSource endWorkBindingSource;
+        private _D__MYDB_MDFDataSetTableAdapters.EndWorkTableAdapter endWorkTableAdapter;
+        private System.Windows.Forms.DataGridViewComboBoxColumn employeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button editChange;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button addChange;
+        private System.Windows.Forms.BindingSource changePositionBindingSource;
+        private _D__MYDB_MDFDataSetTableAdapters.ChangePositionTableAdapter changePositionTableAdapter;
+        private System.Windows.Forms.DataGridViewComboBoxColumn employeeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn sPosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
@@ -670,12 +790,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEndDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button add;
-        private System.Windows.Forms.BindingSource endWorkBindingSource;
-        private _D__MYDB_MDFDataSetTableAdapters.EndWorkTableAdapter endWorkTableAdapter;
-        private System.Windows.Forms.DataGridViewComboBoxColumn employeeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
 
