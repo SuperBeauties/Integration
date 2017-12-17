@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace MakePayroll {
-    public class PayrollWindowViewModel : INotifyPropertyChanged {
+namespace MakePayroll
+{
+    public class PayrollWindowViewModel : INotifyPropertyChanged
+    {
         public event PropertyChangedEventHandler PropertyChanged;
 
         public PayrollView payroll { get; set; }
@@ -18,7 +20,8 @@ namespace MakePayroll {
         public TablePayrollView rowTablePayroll { get; set; }
         public ICollectionView tableView { get; set; }
 
-        public PayrollWindowViewModel(PayrollView payroll) {
+        public PayrollWindowViewModel(PayrollView payroll)
+        {
             this.payroll = payroll;
             tablePayrollAdded = new List<TablePayrollView>();
             tablePayrollRemoved = new List<TablePayrollView>();
@@ -27,7 +30,8 @@ namespace MakePayroll {
             tableView = CollectionViewSource.GetDefaultView(tablePayroll);
         }
 
-        public void add() {
+        public void add()
+        {
             TablePayrollView rowTablePayroll = new TablePayrollView();
             rowTablePayroll.payroll = payroll.id;
             Queries queries = new Queries();
@@ -37,7 +41,8 @@ namespace MakePayroll {
             tableView.Refresh();
         }
 
-        public void remove() {
+        public void remove()
+        {
             Queries queries = new Queries();
             queries.removeTablePayroll(rowTablePayroll);
             tablePayrollRemoved.Add(rowTablePayroll);
@@ -45,23 +50,28 @@ namespace MakePayroll {
             tableView.Refresh();
         }
 
-        public bool saveTable() {
+        public bool saveTable()
+        {
             Queries queries = new Queries();
             queries.editPayroll(payroll);
             return queries.saveTablePayroll(tablePayroll);
         }
 
-        public void unSave() {
+        public void unSave()
+        {
             Queries queries = new Queries();
-            foreach (var rowTable in tablePayrollAdded) {
+            foreach (var rowTable in tablePayrollAdded)
+            {
                 queries.removeTablePayroll(rowTable);
             }
-            foreach (var rowTable in tablePayrollRemoved) {
+            foreach (var rowTable in tablePayrollRemoved)
+            {
                 queries.addRowTablePayroll(rowTable);
             }
         }
 
-        public string month() {
+        public string month()
+        {
             string date = ((DateTime)payroll.date).ToLongDateString();
             string[] dateItems = date.Split(' ');
             StringBuilder monthBuilder = new StringBuilder();
@@ -76,13 +86,17 @@ namespace MakePayroll {
             return payroll.month;
         }
 
-        public void selectEmployee() {
-            if (rowTablePayroll != null && payroll.date != null) {
+        public void selectEmployee()
+        {
+            if (rowTablePayroll != null && payroll.date != null)
+            {
                 EmploeesWindow win = new EmploeesWindow((DateTime)payroll.date);
                 win.ShowDialog();
 
-                if (win.DialogResult == true) {
-                    if (tablePayroll.Where(c => c.employee == win.employee.id).Count() >= 1) {
+                if (win.DialogResult == true)
+                {
+                    if (tablePayroll.Where(c => c.employee == win.employee.id).Count() >= 1)
+                    {
                         MessageBox.Show("Данный сотрудник уже добавлен в таблицу");
                         return;
                     }
@@ -91,8 +105,11 @@ namespace MakePayroll {
                     rowTablePayroll.tabelNumber = win.employee.tabelNumber;
                     rowTablePayroll.fio = win.employee.fio;
                     rowTablePayroll.name = win.employee.name;
-                    rowTablePayroll.sum = win.employee.sum;
-                    rowTablePayroll.ndfl = win.employee.sum * 0.13;
+
+                    Queries queries = new Queries();
+                    rowTablePayroll.sum = queries.getSum(win.employee.id, (DateTime)payroll.date);
+
+                    rowTablePayroll.ndfl = rowTablePayroll.sum * 0.13;
                     rowTablePayroll.fact = rowTablePayroll.sum - rowTablePayroll.ndfl;
                     tableView.Refresh();
                 }

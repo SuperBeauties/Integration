@@ -28,6 +28,12 @@
       <Association Name="Position_Salary" Member="Salary" ThisKey="id" OtherKey="position" Type="Salary" />
     </Type>
   </Table>
+  <Table Name="dbo.EmployeesSalary" Member="EmployeesSalary">
+    <Type Name="EmployeesSalary">
+      <Column Name="employee" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="salary" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.Salary" Member="Salary">
     <Type Name="Salary">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

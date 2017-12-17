@@ -100,8 +100,16 @@ namespace MakePayroll
 				return this.GetTable<Position>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Salary> Salary
+
+        public System.Data.Linq.Table<EmployeesSalary> EmployeesSalary
+        {
+            get
+            {
+                return this.GetTable<EmployeesSalary>();
+            }
+        }
+
+        public System.Data.Linq.Table<Salary> Salary
 		{
 			get
 			{
@@ -555,84 +563,69 @@ namespace MakePayroll
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Position")]
-	public partial class Position : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmployeesSalary")]
+	public partial class EmployeesSalary : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private int _employee;
 		
-		private string _name;
+		private int _salary;
 		
-		private EntitySet<Salary> _Salary;
 		
     #region Определения метода расширяемости
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
+    partial void OnemployeeChanging(int value);
+    partial void OnemoloyeeChanged();
+    partial void OnsalaryChanging(int value);
+    partial void OnsalaryChanged();
     #endregion
 		
-		public Position()
+		public EmployeesSalary()
 		{
-			this._Salary = new EntitySet<Salary>(new Action<Salary>(this.attach_Salary), new Action<Salary>(this.detach_Salary));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage= "_employee", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int employee
+        {
 			get
 			{
-				return this._id;
+				return this._employee;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._employee != value))
 				{
-					this.OnidChanging(value);
+					this.OnemployeeChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
+					this._employee = value;
 					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this.OnemoloyeeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(10)")]
-		public string name
-		{
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_salary", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
+        public int salary
+        {
 			get
 			{
-				return this._name;
+				return this._salary;
 			}
 			set
 			{
-				if ((this._name != value))
+				if ((this._salary != value))
 				{
-					this.OnnameChanging(value);
+					this.OnsalaryChanging(value);
 					this.SendPropertyChanging();
-					this._name = value;
+					this._salary = value;
 					this.SendPropertyChanged("name");
-					this.OnnameChanged();
+					this.OnsalaryChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Position_Salary", Storage="_Salary", ThisKey="id", OtherKey="position")]
-		public EntitySet<Salary> Salary
-		{
-			get
-			{
-				return this._Salary;
-			}
-			set
-			{
-				this._Salary.Assign(value);
 			}
 		}
 		
@@ -655,21 +648,123 @@ namespace MakePayroll
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Salary(Salary entity)
-		{
-			this.SendPropertyChanging();
-			entity.Position1 = this;
-		}
-		
-		private void detach_Salary(Salary entity)
-		{
-			this.SendPropertyChanging();
-			entity.Position1 = null;
-		}
 	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary")]
+
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Position")]
+    public partial class Position : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private int _id;
+
+        private string _name;
+
+        private EntitySet<Salary> _Salary;
+
+        #region Определения метода расширяемости
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnidChanging(int value);
+        partial void OnidChanged();
+        partial void OnnameChanging(string value);
+        partial void OnnameChanged();
+        #endregion
+
+        public Position()
+        {
+            this._Salary = new EntitySet<Salary>(new Action<Salary>(this.attach_Salary), new Action<Salary>(this.detach_Salary));
+            OnCreated();
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_id", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
+        public int id
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                if ((this._id != value))
+                {
+                    this.OnidChanging(value);
+                    this.SendPropertyChanging();
+                    this._id = value;
+                    this.SendPropertyChanged("id");
+                    this.OnidChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_name", DbType = "NChar(10)")]
+        public string name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                if ((this._name != value))
+                {
+                    this.OnnameChanging(value);
+                    this.SendPropertyChanging();
+                    this._name = value;
+                    this.SendPropertyChanged("name");
+                    this.OnnameChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Position_Salary", Storage = "_Salary", ThisKey = "id", OtherKey = "position")]
+        public EntitySet<Salary> Salary
+        {
+            get
+            {
+                return this._Salary;
+            }
+            set
+            {
+                this._Salary.Assign(value);
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        private void attach_Salary(Salary entity)
+        {
+            this.SendPropertyChanging();
+            entity.Position1 = this;
+        }
+
+        private void detach_Salary(Salary entity)
+        {
+            this.SendPropertyChanging();
+            entity.Position1 = null;
+        }
+    }
+
+    [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary")]
 	public partial class Salary : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		

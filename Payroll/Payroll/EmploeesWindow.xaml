@@ -18,8 +18,6 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Табельный номер" Binding="{Binding tabelNumber}"/>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding fio}"/>
-                <DataGridTextColumn Header="Должность" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Оклад" Binding="{Binding sum}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
