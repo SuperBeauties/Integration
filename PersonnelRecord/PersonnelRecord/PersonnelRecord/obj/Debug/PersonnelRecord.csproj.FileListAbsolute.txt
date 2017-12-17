@@ -50,7 +50,6 @@ E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\bin\Debug\Personn
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.csprojResolveAssemblyReference.cache
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.AddEmployee.resources
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.EndWork.resources
-E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.Form1.resources
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.Position.resources
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.Properties.Resources.resources
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.Salary.resources
@@ -60,3 +59,4 @@ E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\Personn
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.csproj.CoreCompileInputs.cache
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.exe
 E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.pdb
+E:\Integration\PersonnelRecord\PersonnelRecord\PersonnelRecord\obj\Debug\PersonnelRecord.MainForm.resources

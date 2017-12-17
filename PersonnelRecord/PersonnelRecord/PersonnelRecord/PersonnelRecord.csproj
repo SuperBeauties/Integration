@@ -74,6 +74,8 @@
     <Compile Include="EndWork.Designer.cs">
       <DependentUpon>EndWork.cs</DependentUpon>
     </Compile>
+    <Compile Include="Integration\IntegrationModel.cs" />
+    <Compile Include="Integration\Output.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

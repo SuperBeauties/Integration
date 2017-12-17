@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MakePayroll"
         mc:Ignorable="d"
-        Title="Начисление заработной платы" Height="360" Width="635">
+        Title="Начисление заработной платы" Height="360" Width="635" >
     <StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>

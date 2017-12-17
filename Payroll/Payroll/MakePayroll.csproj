@@ -141,6 +141,9 @@
       <DependentUpon>EmploeesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EmployeesWindowView.cs" />
+    <Compile Include="Integration\Input.cs" />
+    <Compile Include="Integration\IntegrationModel.cs" />
+    <Compile Include="Integration\Queries.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="PayrollWindow.xaml.cs">
       <DependentUpon>PayrollWindow.xaml</DependentUpon>

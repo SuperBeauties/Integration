@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonnelRecord.Integration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -610,6 +611,13 @@ namespace PersonnelRecord
                 changePositionBindingSource.RemoveCurrent();
                 changePositionTableAdapter.Update(row);
             }
+        }
+
+        private void output_Click(object sender, EventArgs e)
+        {
+            Output output = new Output();
+            output.output();
+            MessageBox.Show("Данные выгружены");
         }
     }
 }

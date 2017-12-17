@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakePayroll.Integration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,9 @@ namespace MakePayroll {
         MainWindowViewModel view;
         public MainWindow() {
             InitializeComponent();
+            Input input = new Input();
+            input.input();
+
             view = new MainWindowViewModel();
             DataContext = view;
         }
