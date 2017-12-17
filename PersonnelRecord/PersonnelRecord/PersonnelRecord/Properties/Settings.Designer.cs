@@ -26,8 +26,8 @@ namespace PersonnelRecord.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EJUMD1A\\SERVER2017;Initial Catalog=D:\\MYDB.MDF;Integrated Sec" +
-            "urity=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EJUMD1A\\SQLEXPRESS;Initial Catalog=PersonelRecord;Integrated " +
+            "Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")]
         public string D__MYDB_MDFConnectionString {
             get {
                 return ((string)(this["D__MYDB_MDFConnectionString"]));
@@ -37,8 +37,8 @@ namespace PersonnelRecord.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EJUMD1A\\SERVER2017;Initial Catalog=D:\\MYDB.MDF;Integrated Sec" +
-            "urity=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EJUMD1A\\SQLEXPRESS;Initial Catalog=PersonelRecord;Integrated " +
+            "Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")]
         public string D__MYDB_MDFConnectionString1 {
             get {
                 return ((string)(this["D__MYDB_MDFConnectionString1"]));
